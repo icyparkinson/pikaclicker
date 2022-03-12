@@ -113,10 +113,10 @@ function addPoints(){
 
 
   // if points reach past 100 threshold // 
-    if ((points >= 50) && (thresh100 == false)){
-    hundredThreshold()
-    console.log("greater")
-  }
+  //   if ((points >= 50) && (thresh100 == false)){
+  //   hundredThreshold()
+  //   console.log("greater")
+  // }
   
   //playAudio(audioFile) Audio file options: "click", "horn", "cat"
   
