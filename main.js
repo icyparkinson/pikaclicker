@@ -7,15 +7,21 @@ document.querySelector(".illustration").addEventListener("click", addPoints)
 
 
 function playAudio(audioFile) {
-  let clickFile ="https://cdn.glitch.global/3dcd6566-702e-4c3d-adb7-c371085120f7/mixkit-video-game-retro-click-237.wav?v=1646965480672";
-  let catFile = "https://cdn.glitch.global/3dcd6566-702e-4c3d-adb7-c371085120f7/meow.wav?v=1646963644919";
-  let airhornFile = "https://cdn.glitch.global/3dcd6566-702e-4c3d-adb7-c371085120f7/Dj-air-horn-sound-effect.mp3?v=1646965266913";
+  let clickFile ="sound-effect.mp3";
+  let happyFile = "pika-happy.mp3"
+  let pleasedFile = "pika-pleased.mp3"
+  let questionFile = "pika-question.mp3"
+  let madFile = "pika-mad.mp3"
   let selected;
   
-  if (audioFile === "horn") {
-    selected = airhornFile;
-  } else if (audioFile === "cat") {
-    selected = catFile;
+  if (audioFile === "happy") {
+    selected = happyFile
+  } else if (audioFile === "pleased") {
+    selected = pleasedFile
+  } else if (audioFile === "mad") {
+    selected = madFile
+  } else if (audioFile === "question") {
+    selected = questionFile
   } else {
     selected = clickFile
   }
@@ -56,8 +62,13 @@ document.querySelector("#firstUpgrade").addEventListener("click", addToMult)
 
 function floatError(){
   document.querySelector("#error").classList.add("error-box")
-  setTimeout(function(){document.querySelector("#error").classList.remove("error-box")}, 500)
-  document.querySelector("#errorMessage").innerText = "Not enough pokedollars!" 
+  document.querySelector(".illustration").src="angrypika.png"
+  setTimeout(function(){
+    document.querySelector("#error").classList.remove("error-box")}, 500)
+    document.querySelector("#errorMessage").innerText = "Not enough pokedollars!"
+
+  playAudio("mad")
+
 }
 
 
@@ -66,8 +77,10 @@ function addToMult(){
     multiplier += 1
     console.log(`multiplier is at ${multiplier}`)
     points -= cost
-    cost = 10*multiplier*2.5
+    cost = 10*multiplier*8.5
     score.innerText = points
+    playAudio("pleased")
+    document.querySelector(".illustration").src="pikajoy.png"
     document.querySelector("#firstUpgrade").innerText = `Upgrade click multiplier to x${multiplier+1} for ${cost} pokedollars`
   return multiplier}
   else{
@@ -78,7 +91,7 @@ function addToMult(){
 let thresh100 = false
 
 function hundredThreshold(){
-  playAudio("cat")
+  playAudio("happy")
   thresh100 = true
 }
 
@@ -108,7 +121,8 @@ function addPoints(){
   //playAudio(audioFile) Audio file options: "click", "horn", "cat"
   
   
-  playAudio('click')
+  playAudio()
+  document.querySelector(".illustration").src="cute-pikachu-transparent.png"
   points += (1 * multiplier)
   score.innerText = points
   
