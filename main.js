@@ -51,6 +51,16 @@ let multiplier = 1
 let cost = 10
 document.querySelector("#firstUpgrade").addEventListener("click", addToMult)
 
+
+//ERROR MESSAGE
+
+function floatError(){
+  document.querySelector("#error").classList.add("error-box")
+  setTimeout(function(){document.querySelector("#error").classList.remove("error-box")}, 500)
+  document.querySelector("#errorMessage").innerText = "Not enough pokedollars!" 
+}
+
+
 function addToMult(){
   if (points >= cost){
     multiplier += 1
@@ -58,10 +68,10 @@ function addToMult(){
     points -= cost
     cost = 10*multiplier*2.5
     score.innerText = points
-    document.querySelector("#firstUpgrade").innerText = `Upgrade click multiplier to x${multiplier+1} for ${cost} pizzas`
+    document.querySelector("#firstUpgrade").innerText = `Upgrade click multiplier to x${multiplier+1} for ${cost} pokedollars`
   return multiplier}
   else{
-    alert("Not enough pokedollars")
+    floatError()
   }
 }
 
@@ -80,6 +90,8 @@ function floatValue(){
 }
 
 
+
+
 function addPoints(){
   console.log("button is clicked")
 // adding +value floater //
@@ -95,7 +107,7 @@ function addPoints(){
   
   //playAudio(audioFile) Audio file options: "click", "horn", "cat"
   
-  makeDiv()
+  
   playAudio('click')
   points += (1 * multiplier)
   score.innerText = points

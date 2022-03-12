@@ -276,6 +276,41 @@
 
 
 
+/* NOT ENOUGH POINTS ANIMATION */
+
+.error-box{
+  font-size: 35px;
+  position: relative;
+  font-family: sans-serif;
+  top: 0%;
+  left: 0%;
+}
+.error-box span{
+  animation: mover 1s linear;
+  display: inline-block;
+  color: red;
+  font-weight: bolder;
+  animation-fill-mode: forwards;
+}
+@keyframes mover
+{
+  0%{
+      text-shadow: 0 0 30px rgba(0, 0, 0, 0);
+    }
+  50%{
+      text-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+      transform: translateY(-30px);
+    }
+  100%
+    {
+      text-shadow: 0 0 30px rgba(0, 0, 0, 0);
+      color: transparent;
+      transform: translateY(-50px);
+    }
+}
+
+
+
 
  /* MEDIA QUERY */ 
   
