@@ -1,13 +1,13 @@
 
 :root {
-    --color-bg: #69F7BE;
+    --color-bg: #6699CC;
     --color-text-main: #000000;
     --color-primary: #FFFF00;
     --wrapper-height: 87vh;
     --image-max-width: 300px;
     --image-margin: 3rem;
-    --font-family: "HK Grotesk";
-    --font-family-header: "HK Grotesk";
+    --font-family: "Press Start 2P";
+    --font-family-header: "Press Start 2P";
   }
   
   /* Basic page style resets */
@@ -34,13 +34,13 @@
   
   /* Import fonts */
   @font-face {
-  /*   font-family: HK Grotesk;
+  /*   font-family: Press Start 2P;
     src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027")
       format("opentype"); */
     font-family: 'Archivo Black', sans-serif;
   }
   @font-face {
-  /*   font-family: HK Grotesk; */
+  /*   font-family: Press Start 2P; */
     font-family: 'Archivo Black', sans-serif;
     font-weight: bold;
     src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437")
@@ -86,7 +86,7 @@
   
   .footer a:not(.btn--remix):link,
   a:not(.btn--remix):visited {
-    font-family: HK Grotesk;
+    font-family: Press Start 2P;
     font-style: normal;
     font-weight: normal;
     font-size: 1.1rem;
@@ -117,9 +117,9 @@
   /*   background-color: var(--color-bg); */
   /*   background-color: rgb(0, 100, 145); */
   /*   background: radial-gradient(circle, rgba(0, 100, 145, 0.3) 5%, rgba(2,0,36,1) 100%); */
-    background: radial-gradient(circle, rgba(0,100,145,1) 33%, rgba(0,83,121,1) 100%);
+    background: radial-gradient(circle, #6699CC 33%, rgba(0,83,121,1) 100%);
     border-radius: 100px;
-    border: 10px solid #E31837;
+    border: 10px solid #BF3100;
     margin: 50px;
   }
   
@@ -144,7 +144,7 @@
     color: white;
   /*   drop-shadow: (30px 10px 4px #000000; */
   /*   text-shadow: 2px 2px 3px #ffffff; */
-    text-shadow: 2px 2px 3px #E31837;
+    text-shadow: 2px 2px 3px #BF3100;
     font-family: 'Archivo Black', sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -224,15 +224,60 @@
     display: none;
   }
   
-  
+  #firstUpgrade{
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 15px;
   }
+  
+  
   #mult {
     padding-left: 1em;
     color: white;
     font-style: italic;
     text-shadow: 2px 2px 3px #000000;
   }
-  
+
+
+
+
+/* CLICK ANIMATION + POINTS */
+
+.plus-box{
+  font-size: 15px;
+  position: relative;
+  font-family: sans-serif;
+  top: 0%;
+  left: 5%;
+}
+.plus-box span{
+  animation: mover 1s linear;
+  display: inline-block;
+  color: white;
+  font-weight: bolder;
+  animation-fill-mode: forwards;
+}
+@keyframes mover
+{
+  0%{
+      text-shadow: 0 0 30px rgba(0, 0, 0, 0);
+    }
+  50%{
+      text-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+      transform: translateY(-30px);
+    }
+  100%
+    {
+      text-shadow: 0 0 30px rgba(0, 0, 0, 0);
+      color: transparent;
+      transform: translateY(-50px);
+    }
+}
+
+
+
+
+ /* MEDIA QUERY */ 
   
   @media screen and (max-width: 520px){
     body {
@@ -240,7 +285,7 @@
       height: 100%;
       clear: both;
       margin: 0;
-      border: .5em solid #E31837;
+      border: .5em solid #BF3100;
       border-radius: .3em;
       padding: 0;
       border-radius: 0;

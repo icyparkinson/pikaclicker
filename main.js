@@ -40,7 +40,12 @@ para.style.position='absolute';
 para.style.width=width;
 para.innerHTML = '<img src="pokedollar.webp" width="50%">';
 document.body.appendChild(para);
+setTimeout(function() {para.hide}, 1000)
+
 }
+
+
+
 
 let multiplier = 1
 let cost = 10
@@ -67,8 +72,22 @@ function hundredThreshold(){
   thresh100 = true
 }
 
+//floaty clicky value stuff
+function floatValue(){
+  document.querySelector("#plusplus").classList.add("plus-box")
+  setTimeout(function(){document.querySelector("#plusplus").classList.remove("plus-box")}, 500)
+  document.querySelector("#plusNum").innerText = `+ ${1 * multiplier}`
+}
+
+
 function addPoints(){
   console.log("button is clicked")
+// adding +value floater //
+  floatValue()
+
+
+
+  // if points reach past 100 threshold // 
     if ((points >= 50) && (thresh100 == false)){
     hundredThreshold()
     console.log("greater")
