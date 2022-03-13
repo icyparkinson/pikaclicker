@@ -286,7 +286,7 @@
   left: 0%;
 }
 .error-box span{
-  animation: mover 1s linear;
+  animation: mover 2s linear;
   display: inline-block;
   color: red;
   font-weight: bolder;

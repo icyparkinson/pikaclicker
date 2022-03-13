@@ -64,7 +64,7 @@ function floatError(){
   document.querySelector("#error").classList.add("error-box")
   document.querySelector(".illustration").src="angrypika.png"
   setTimeout(function(){
-    document.querySelector("#error").classList.remove("error-box")}, 500)
+    document.querySelector("#error").classList.remove("error-box")}, 1000)
     document.querySelector("#errorMessage").innerText = "Not enough pokedollars!"
 
   playAudio("mad")
