@@ -25,8 +25,15 @@ function playAudio(audioFile) {
   } else {
     selected = clickFile
   }
-    
-  new Audio(selected).play();
+  let audioSound = new Audio(selected)  
+  if ((selected === madFile) || (selected === clickFile)){
+    audioSound.volume = 0.05
+  }
+  else if (selected === pleasedFile){
+    audioSound.volume = 0.1
+  }
+
+  audioSound.play()
 }
 
 
@@ -55,7 +62,7 @@ setTimeout(function() {para.hide}, 1000)
 
 let multiplier = 1
 let cost = 10
-document.querySelector("#firstUpgrade").addEventListener("click", addToMult)
+document.querySelector("#firstUpgrade").addEventListener("click", addToMult, cooldown)
 
 
 //ERROR MESSAGE
@@ -64,13 +71,19 @@ function floatError(){
   document.querySelector("#error").classList.add("error-box")
   document.querySelector(".illustration").src="angrypika.png"
   setTimeout(function(){
-    document.querySelector("#error").classList.remove("error-box")}, 1000)
+    document.querySelector("#error").classList.remove("error-box")}, 1500)
     document.querySelector("#errorMessage").innerText = "Not enough pokedollars!"
 
+  // playAudio("mad").volume = 2
   playAudio("mad")
+  
 
 }
 
+function cooldown(){
+  document.querySelector("#firstUpgrade").disabled = true;
+  setTimeout(function(){document.querySelector("#firstUpgrade").disabled = false;}, 2000)
+}
 
 function addToMult(){
   if (points >= cost){
@@ -79,11 +92,13 @@ function addToMult(){
     points -= cost
     cost = 10*multiplier*8.5
     score.innerText = points
+    // playAudio("pleased").volume = 1
     playAudio("pleased")
     document.querySelector(".illustration").src="pikajoy.png"
     document.querySelector("#firstUpgrade").innerText = `Upgrade click multiplier to x${multiplier+1} for ${cost} pokedollars`
   return multiplier}
   else{
+    cooldown()
     floatError()
   }
 }
