@@ -1,8 +1,8 @@
-  <img src = "images/pikaclicker.png">
+  <img src = "media/pikaclicker.png">
   
   <h2>Overview</h2>
   
-  Pikachu Clicker is an incremental clicking game inspired by the classic Cookie Clicker. 
+  Pikachu Clicker is an incremental clicking game inspired by the classic <a href="https://cookie-clicker.co/">Cookie Clicker</a>. 
   
   <h2>How It Works</h2>
  Click on Pikachu to earn Pokedollars! Earn enough and you can upgrade your click to become stronger. Keep earning pokedollars and upgrading your click to keep Pikachu happy!
@@ -26,5 +26,5 @@
 <h2>Want More?</h2>
 If you'd like to see more about me, please visit my <a href="https://www.linkedin.com/in/icyparkinson/">LinkedIn</a>.
 
-If you haven't given it a look yet, check out my <a href="https://pikaclicker.netlify.app/">Pikachu Clicker</a>!
+If you haven't given it a look yet, check out my <a href="https://sleepyanime.herokuapp.com">Anime Tracker</a>!
     
