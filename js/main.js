@@ -7,11 +7,11 @@ document.querySelector(".illustration").addEventListener("click", addPoints)
 
 
 function playAudio(audioFile) {
-  let clickFile ="sound-effect.mp3";
-  let happyFile = "pika-happy.mp3"
-  let pleasedFile = "pika-pleased.mp3"
-  let questionFile = "pika-question.mp3"
-  let madFile = "pika-mad.mp3"
+  let clickFile ="../media/sound-effect.mp3";
+  let happyFile = "../media/pika-happy.mp3"
+  let pleasedFile = "../media/pika-pleased.mp3"
+  let questionFile = "../media/pika-question.mp3"
+  let madFile = "../media/pika-mad.mp3"
   let selected;
   
   if (audioFile === "happy") {
@@ -51,7 +51,7 @@ console.log(para.style)
 para.style.left=left;
 para.style.position='absolute';
 para.style.width=width;
-para.innerHTML = '<img src="pokedollar.webp" width="50%">';
+para.innerHTML = '<img src="../media/pokedollar.webp" width="50%">';
 document.body.appendChild(para);
 setTimeout(function() {para.hide}, 1000)
 
@@ -69,7 +69,7 @@ document.querySelector("#firstUpgrade").addEventListener("click", addToMult, coo
 
 function floatError(){
   document.querySelector("#error").classList.add("error-box")
-  document.querySelector(".illustration").src="angrypika.png"
+  document.querySelector(".illustration").src="../media/angrypika.png"
   setTimeout(function(){
     document.querySelector("#error").classList.remove("error-box")}, 1500)
     document.querySelector("#errorMessage").innerText = "Not enough pokedollars!"
@@ -94,7 +94,7 @@ function addToMult(){
     score.innerText = points
     // playAudio("pleased").volume = 1
     playAudio("pleased")
-    document.querySelector(".illustration").src="pikajoy.png"
+    document.querySelector(".illustration").src="../media/pikajoy.png"
     document.querySelector("#firstUpgrade").innerText = `Upgrade click multiplier to x${multiplier+1} for ${cost} pokedollars`
   return multiplier}
   else{
@@ -137,7 +137,7 @@ function addPoints(){
   
   
   playAudio()
-  document.querySelector(".illustration").src="cute-pikachu-transparent.png"
+  document.querySelector(".illustration").src="../media/cute-pikachu-transparent.png"
   points += (1 * multiplier)
   score.innerText = points
   
