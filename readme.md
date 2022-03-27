@@ -2,7 +2,7 @@
   
   <h2>Overview</h2>
   
-  Pikachu Clicker is an incremental clicking game inspired by the classic <a href="https://cookie-clicker.co/">Cookie Clicker</a>. 
+  Pikachu Clicker is an incremental clicking game inspired by the classic <a href="https://cookie-clicker.co/">Cookie Clicker</a>. I love to play games and I often become addicted to clicker games so I wanted to make my own. It's a great way to pass the time and also brings an immediate sense of accomplishment! Haha!
   
   <h2>How It Works</h2>
  Click on Pikachu to earn Pokedollars! Earn enough and you can upgrade your click to become stronger. Keep earning pokedollars and upgrading your click to keep Pikachu happy!
